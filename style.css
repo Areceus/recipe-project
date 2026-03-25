@@ -1,0 +1,462 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #ff6b6b, #ffcc70, #6bcBef, #4ecdc4);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    color: white;
+}
+
+/* Animated Gradient */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #ff6b6b,
+        0 0 30px #ff6b6b;
+}
+
+/* Navigation */
+nav a {
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Intro Section */
+.intro {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Recipe Cards Layout */
+.recipes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Card Design */
+.card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+/* 3D Hover Effect */
+.card:hover {
+    transform: rotateY(15deg) rotateX(10deg) scale(1.05);
+}
+
+/* Images */
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Button */
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.card a:hover {
+    background: black;
+    color: white;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Floating Bubbles Background */
+.bubbles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bubbles span {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    bottom: -100px;
+    animation: float 10s linear infinite;
+}
+
+/* Different positions */
+.bubbles span:nth-child(1) {
+    left: 10%;
+    animation-duration: 8s;
+}
+
+.bubbles span:nth-child(2) {
+    left: 30%;
+    animation-duration: 12s;
+}
+
+.bubbles span:nth-child(3) {
+    left: 50%;
+    animation-duration: 10s;
+}
+
+.bubbles span:nth-child(4) {
+    left: 70%;
+    animation-duration: 14s;
+}
+
+.bubbles span:nth-child(5) {
+    left: 90%;
+    animation-duration: 9s;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        transform: translateY(-1000px) scale(1.5);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .recipes {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 65px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(151, 70, 116);
+}
+
+.hero-text h2 {
+    font-size: 2rem;
+}
+
+/* INFO BADGES */
+.info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* MAIN RECIPE LAYOUT */
+.recipe-container {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* INGREDIENTS + STEPS CARDS */
+.ingredients,
+.steps {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    transition: 0.3s;
+    color: magenta;
+}
+
+.ingredients:hover,
+.steps:hover {
+    transform: scale(1.03);
+}
+
+/* LIST STYLING */
+ul,
+ol {
+    padding-left: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .recipe-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* ============================= */
+/* 🍕 PIZZA PAGE (NON-DESTRUCTIVE) */
+/* ============================= */
+
+/* Hero variation (darker, richer look) */
+.hero-pizza img {
+    filter: brightness(0.6) contrast(1.2) saturate(1.2);
+}
+
+/* Slight overlay tint for pizza theme */
+.hero-pizza::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(50, 0, 0, 0.3);
+    pointer-events: none;
+}
+
+/* Pizza badges slightly darker */
+.hero-pizza+.info .badge {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* Ingredients card subtle red tint */
+.hero-pizza~.recipe-container .ingredients {
+    background: rgba(255, 100, 100, 0.15);
+}
+
+/* Steps card subtle warm tint */
+.hero-pizza~.recipe-container .steps {
+    background: rgba(255, 150, 100, 0.15);
+}
+
+/* Hover effect slightly stronger for pizza */
+.hero-pizza~.recipe-container .ingredients:hover,
+.hero-pizza~.recipe-container .steps:hover {
+    transform: scale(1.05);
+}
+
+/* Title glow variation (pizza theme) */
+header h1 {
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #ff4d4d,
+        0 0 30px #ff1a1a;
+}
+
+/* ============================= */
+/* 🎂 CAKE PAGE (NON-DESTRUCTIVE) */
+/* ============================= */
+
+/* Soft pastel hero look */
+.hero-cake img {
+    filter: brightness(0.8) contrast(1.1) saturate(1.2);
+}
+
+/* Light pink overlay */
+.hero-cake::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 182, 193, 0.3);
+    pointer-events: none;
+}
+
+/* Dessert-style badges */
+.hero-cake+.info .badge {
+    background: rgba(255, 182, 193, 0.4);
+}
+
+/* Cards softer tone */
+.hero-cake~.recipe-container .ingredients {
+    background: rgba(255, 200, 200, 0.2);
+}
+
+.hero-cake~.recipe-container .steps {
+    background: rgba(255, 220, 200, 0.2);
+}
+
+/* Glow effect for dessert feel */
+.hero-cake~.recipe-container .ingredients:hover,
+.hero-cake~.recipe-container .steps:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.6);
+}
+
+/* Title glow softer */
+header h1 {
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #ffb6c1,
+        0 0 30px #ff69b4;
+}
+
+/* ============================= */
+/* 🍗 BUTTER CHICKEN PAGE */
+/* ============================= */
+
+/* Warm rich hero */
+.hero-butter img {
+    filter: brightness(0.7) contrast(1.2) saturate(1.3);
+}
+
+/* Golden-orange overlay */
+.hero-butter::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 140, 0, 0.35);
+    pointer-events: none;
+}
+
+/* Warm badges */
+.hero-butter+.info .badge {
+    background: rgba(255, 140, 0, 0.4);
+}
+
+/* Ingredients card (spice tone) */
+.hero-butter~.recipe-container .ingredients {
+    background: rgba(255, 120, 80, 0.2);
+}
+
+/* Steps card (creamy tone) */
+.hero-butter~.recipe-container .steps {
+    background: rgba(255, 180, 120, 0.2);
+}
+
+/* Strong hover glow */
+.hero-butter~.recipe-container .ingredients:hover,
+.hero-butter~.recipe-container .steps:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.7);
+}
+
+/* Title glow (warm theme) */
+header h1 {
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #ff8c00,
+        0 0 30px #ff4500;
+}
+
+/* ============================= */
+/* 🍯 GULAB JAMUN PAGE (SHOWCASE) */
+/* ============================= */
+
+/* Rich golden hero */
+.hero-gulab img {
+    filter: brightness(0.75) contrast(1.2) saturate(1.4);
+}
+
+/* Golden glow overlay */
+.hero-gulab::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 215, 0, 0.35);
+    pointer-events: none;
+}
+
+/* Premium glowing badges */
+.hero-gulab+.info .badge {
+    background: rgba(255, 215, 0, 0.4);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+/* Ingredients (soft golden) */
+.hero-gulab~.recipe-container .ingredients {
+    background: rgba(255, 220, 150, 0.25);
+}
+
+/* Steps (warm syrup tone) */
+.hero-gulab~.recipe-container .steps {
+    background: rgba(255, 180, 100, 0.25);
+}
+
+/* Strong glow hover (final page highlight) */
+.hero-gulab~.recipe-container .ingredients:hover,
+.hero-gulab~.recipe-container .steps:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+
+/* Strongest title glow (final impression) */
+header h1 {
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #ffd700,
+        0 0 30px #ffb300,
+        0 0 40px #ff8c00;
+}
